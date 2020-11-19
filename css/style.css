@@ -1,6 +1,7 @@
 .toolbar {
+    margin-top: 20px;
     font-family: 'Mitr', sans-serif;
-    background-color: #FFAA00;
+    background-color: white;
 }
 
 .tabbar {
@@ -139,8 +140,8 @@
 }
 
 .headertitle {
-    padding: 30px 0 0 20px;
-    font-size: 30px;
+    padding: 26px 0 0 20px;
+    font-size: 24px;
     color: #3E3F68;
     font-family: 'Mitr', sans-serif;
     font-weight: bold;
@@ -148,7 +149,7 @@
 
 .cardtitle {
     padding: 0 0 0 20px;
-    font-size: 26px;
+    font-size: 20px;
     color: #3E3F68;
     font-family: 'Mitr', sans-serif;
     font-weight: bold;
@@ -160,4 +161,65 @@ div {
 
 h1 h2 h3 h4 h5 h6 {
     font-family: 'Mitr', sans-serif;
+}
+
+.toolbartitle {
+    color: #3E3F68;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.menuHome {
+    text-align: center;
+    font-size: 12px;
+    color: #3E3F68;
+    font-weight: bold;
+}
+
+.seeAll {
+    font-size: 10px;
+    margin-right: 30px;
+    text-align: end;
+}
+
+.bidbtn {
+    border: 3px solid #FFAA00;
+    border-radius: 15px;
+    background-color: white;
+    color: #3E3F68;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category {
+    font-size: 20px;
+    text-align: center;
+    color: #3E3F68;
+}
+
+.cardBG {
+    background-color: #FFAA00;
+}
+
+.searchBar {}
+
+.search-input {
+    font-family: 'Mitr', sans-serif;
+    margin-top: 30px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.detailCategory {
+    text-align: start;
+    font-size: 18px;
+    color: #FFAA00;
+}
+
+.detailLocation {
+    color: #FFAA00;
+    text-align: start;
+    font-size: 18px;
 }
