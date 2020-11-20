@@ -1,3 +1,7 @@
+/* .toolbar {
+    font-family: 'Mitr', sans-serif;
+    background-color:  white;
+}
 
 .tabbar {
     background-color: white;
@@ -11,9 +15,7 @@
     font-size: 28px;
 }
 
-.page__background {
-    background-color: white;
-}
+
 
 .active {
     background-color: white;
@@ -119,7 +121,6 @@
 }
 
 
-
 .page {
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
@@ -129,8 +130,9 @@
 }
 
 .headertitle {
-    padding: 26px 0 0 20px;
-    font-size: 24px;
+
+
+font-size: 24px;
     color: #3E3F68;
     font-family: 'Mitr', sans-serif;
     font-weight: bold;
@@ -151,13 +153,6 @@ div {
 h1 h2 h3 h4 h5 h6 {
     font-family: 'Mitr', sans-serif;
 }
-.toolbar {
-    padding-top: 20px;
-    height: 70px;
-    font-family: 'Mitr', sans-serif;
-    background-color:  white;
-}
-
 
 .toolbartitle {
     color: #3E3F68;
@@ -168,7 +163,7 @@ h1 h2 h3 h4 h5 h6 {
 .menuHome {
     text-align: center;
     font-size: 12px;
-    color: white;
+    color: #3E3F68;
     font-weight: bold;
 }
 
@@ -199,7 +194,6 @@ h1 h2 h3 h4 h5 h6 {
     background-color: #FFAA00;
 }
 
-.searchBar {}
 
 .search-input {
     font-family: 'Mitr', sans-serif;
@@ -221,16 +215,6 @@ h1 h2 h3 h4 h5 h6 {
 
 }
 
-.search-input{
-    border: 3px solid #FFAA00;
-
-}
-
-.back-button__icon{
-    color: #3E3F68;
-    fill: #3E3F68;
-
-}
 .picCard{
     height: 200px;
     width: 100%;  
@@ -238,3 +222,7 @@ h1 h2 h3 h4 h5 h6 {
     border-radius: 15px;
  
 }
+.back-button__icon{
+    color: #3E3F68;
+
+} */

@@ -1,0 +1,44 @@
+.picT{
+height: 200px;
+border-radius: 15px;
+}
+
+.margintop{
+    margin-top: 50px;
+}
+
+
+.detailName{
+    padding: 26px 0 0 20px;
+    font-size: 20px;
+    color: #3E3F68;
+    font-family: 'Mitr', sans-serif;
+    font-weight: bold;
+}
+
+.detailRate{
+    text-align: right;
+}
+
+
+.detailLocal{   
+    padding: 0 0 0 0; 
+    text-align: left;
+    font-size: 16px;
+    color: #747474;
+    font-family: 'Mitr', sans-serif;
+    }
+
+.detailCat{  
+    text-align: left;
+    font-size: 16px;
+    color: #747474;
+    font-family: 'Mitr', sans-serif;}
+
+
+
+    .btnContact{
+        background-color: #FFAA00;
+        color: white;
+        border-radius: 15px;
+    }

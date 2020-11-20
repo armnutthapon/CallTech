@@ -1,20 +1,18 @@
-document.addEventListener('init', function (event) {
-    var page = event.target;
-    console.log(page.id);
-    if (page.id === 'page1') {
-        $('#back').hide();
-        page.querySelector('#bw').onclick = function () {
-            document.querySelector('#myNavigator').pushPage('views/blackwidow.html'); 
-            page.querySelector('#bb').onclick = function () {
-                document.querySelector('#myNavigator').pushPage('views/bw.html');
-            };
-        };
-    } else if (page.id === 'bw' || page.id === 'bb') {        
-        $('#back').show();      
-        document.querySelector('ons-back-button').onclick = function(event) {
-            document.querySelector('#myNavigator').popPage();
-        };
+document.addEventListener('init', function(event) {
+        var page = event.target;
+
+        if (page.id === 'page1') {};
 
     }
 
-});
+);
+
+document.querySelector('ons-tabbar').addEventListener('reactive', function(event) {
+    if (event.index == 0) {
+        document.querySelector('#myNavigator_search').popPage();
+    } else if (event.index == 1) {
+        document.querySelector('#myNavigator').popPage();
+    } else if (event.index == 2) {
+        document.querySelector('#Navigator_profile').popPage();
+    }
+})
