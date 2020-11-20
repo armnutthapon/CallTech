@@ -246,17 +246,13 @@ function getmovieDetail(Target) {
                 $("#Tname").append(result)
 
 
+            }else if (page.id === 'detailMovie') {
+                $('#goContact').click(function () {
+
+                    document.querySelector('#myNavigator').pushPage('views/createdeal.html');
+                })
             }
         });
-    });
-    db.collection("video").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = `< source src = "${doc.data().video}"
-            type = "video/mp4" / >`
-            $("#my-video").append(row)
-
-        });
-
     });
 
 
