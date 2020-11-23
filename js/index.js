@@ -217,38 +217,35 @@ function getmovieDetail(Target) {
         querySnapshot.forEach(function (doc) {
             if (doc.data().id == Target) {
                 const result =
-                    `
-                    <div class="container">
-                    <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
+                    `       
+            <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
 
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="headertitle">
-                            ${doc.data().name} </div>
-                        </div>
-        
-                        <div class="col-6">
-                            <div class="headertitle">
-                                <ons-icon icon="md-star" style="color: #FFAA00;">
-                                </ons-icon> ${doc.data().point}
-                            </div>
-                        </div>
+            <div>
+                <div class="detailName">
+                ${doc.data().name} </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4 pl-5 detailLocal">${doc.data().location}</div>
+                <div class="col-5 detailCat">${doc.data().type}</div>
+
+
+                <div class="col-3 text-right">
+                    <div class="detailRate ">
+                        <ons-icon icon="md-star" style="color: #FFAA00;">
+                        </ons-icon>  ${doc.data().rate}
                     </div>
-                    <div class="row ml-1">
-                        <div class="col-3">
-                            <div class="detailLocation">${doc.data().location}</div>
-                        </div>
-        
-                        <div class="col-9">
-                            <div class="detailCategory">${doc.data().type}</div>
-                        </div>
-                    </div>`
-                $("#Tname").append(result)
+                </div>
 
 
-            }else if (page.id === 'detailMovie') {
+
+            </div> `
+                $("#Tcontact").append(result)
+
+
+            }
+            else  {
                 $('#goContact').click(function () {
-
                     document.querySelector('#myNavigator').pushPage('views/createdeal.html');
                 })
             }
