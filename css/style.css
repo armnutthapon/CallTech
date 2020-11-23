@@ -19,44 +19,11 @@
     background-color: white;
 }
 
-.title {
-    font-weight: bold;
-    font-size: 36px;
-    color: #FFAA00;
-}
 
-.poster {
-    text-align: center;
-    height: 540px;
-    width: auto;
-}
 
-.top10 {
-    text-align: center;
-    padding-top: 28px;
-    font-size: larger;
-    font-weight: bold;
-}
 
-.searchPoster {
-    height: 150px;
-    width: 100px;
-}
 
-.movieTitle {
-    font-size: 16px;
-    font-weight: bold;
-}
 
-.movieDetail {
-    font-size: 12px;
-}
-
-.rating {
-    padding: 0 0 0 0;
-    font-size: 14px;
-    font-weight: bold;
-}
 
 .star {
     text-align: center;
@@ -69,54 +36,12 @@
     width: 300px;
 }
 
-.detailPoster {
-    width: 300px;
-    height: 420px;
-    text-align: center;
-}
-
-.posterCenter {
-    text-align: center;
-    padding: 20px 0 0 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-}
-
-.titleDetail {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.detail {
-    padding-top: 8px;
-    font-size: 14px;
-    line-height: 18px;
-}
-
 .search-input {
     background-color: white;
 }
 
-.titleDetail {
-    color: white;
-}
 
-.white {
-    color: white;
-}
 
-.left {
-    background-repeat: inherit;
-}
-
-.bwPoster {
-    background-image: url("/image/bw.jpg");
-    height: 420px;
-    width: 300px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 
 
@@ -237,4 +162,63 @@ h1 h2 h3 h4 h5 h6 {
     border: 3px solid #FFAA00;
     border-radius: 15px;
  
+}
+
+
+.inputBorder{
+    border: 3px solid #FFAA00;
+border-radius: 15px;
+}
+
+
+.inputHader{
+    font-size: 24px;
+    fill: #3E3F68;
+    font-family: 'Mitr', sans-serif;
+    font-weight: bold;
+}
+
+.btnContact{
+    width: 100%;height: 50px;margin-top: 100px;
+}
+
+
+.paddingtop{
+    padding-top: 50px;
+}
+
+
+.font{
+    font-family: 'Mitr', sans-serif;
+
+
+}
+
+textarea {
+    resize: none;
+  }
+
+
+  .profileHeader{
+      margin-top: 20px; 
+      height: 30px;
+       font-size: 18px;
+    font-family: 'Mitr', sans-serif;
+    font-weight: bold;
+}
+
+  
+body {
+
+    font-family: 'Mitr', sans-serif;
+
+}
+
+
+
+
+.toolbar__center:first-child:last-child {
+
+    font-family: 'Mitr', sans-serif;
+
 }

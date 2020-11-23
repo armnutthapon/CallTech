@@ -1,108 +1,57 @@
-<ons-page id="settingprofile">
-    <ons-navigator swipeable id="Navigator_profile" page="profile.html"></ons-navigator>
-    <template id="profile.html">
+<ons-page id="profile">
+  <ons-navigator swipeable id="Navigator_profile" page="profile.html"></ons-navigator>
+  <template id="profile.html">
     <ons-page id="profile">
-      <div class="headderpaddingTop" >
-      <p class="headderfont">PROFILE</p>
-    </div>
-      <div class="container">
-        <ul class="list list--material">
-          <li class="list-item list-item--material page__background">
-            <div class="list-item__left list-item--material__left headderpaddingleft" id="userProfile">
-              
-            </div>
+      <ons-toolbar>
+        <div class="center toolbartitle">
+          ข้อมูลส่วนตัว </div>
+      </ons-toolbar>
 
-            <div class="list-item__center list-item--material__center">
-              <div class="list-title" id="userName">
 
-              </div>
-              <div class="list-subtitle">
-                PREMIUM : 17 Day Left
-              </div>
-            </div>
-          </li>
-        </ul>
+      <div class="container paddingtop text-center">
+
+
+        <img src="/image/1-intro-photo-final.jpg" alt="" style="border-radius: 50%; width: 50%; height: 150px;    border: 3px solid #FFAA00;
+        ">
+
+        <div class="mt-3"> Sharif </div>
+
+
+        <ons-list class="mt-5">
+
+          <ons-list-item>
+            <ons-icon icon="fa-wallet" style="color: #FFAA00; font-size: 30px;">
+            </ons-icon>
+            <div class="pl-2"> ยอดเงินคงเหลือ : <span style="color: #FFAA00; text-align: center;">500</span></div>
+
+          </ons-list-item>
+
+
+
+          <ons-list-header class="profileHeader">บัญชี</ons-list-header>
+          <ons-list-item tappable>แก้ไขข้อมูล</ons-list-item>
+          <ons-list-item tappable>เปลี่ยนรหัสผ่าน</ons-list-item>
+          <ons-list-item tappable>เปลี่ยนภาษา</ons-list-item>
+          <ons-list-item tappable>ตั้งค่าแอปพลิเคชั่น</ons-list-item>
+
+
+
+          <ons-list-header class="profileHeader">อื่นๆ</ons-list-header>
+          <ons-list-item tappable>นโยบายความเป็นส่วนตัว</ons-list-item>
+          <ons-list-item tappable>ตัวกำหนมการให้บริการ</ons-list-item>
+
+          <ons-list-item tappable style="color: red;">ออกจากระบบ</ons-list-item>
+
+
       </div>
-      <div>
-        <div class="headderpadding" id="editprofile">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-account icon-color-menusetting"
-                  ></i>
-                  Edit Profile
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headderpadding" id="packageprofile">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-shopping-cart icon-color-menusetting"
-                  ></i>
-                  Package
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headderpadding" id="settingprofile">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-settings icon-color-menusetting"
-                  ></i>
-                  Setting
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headderpadding" id="helpprofile">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-help icon-color-menusetting"
-                  ></i>
-                  Help
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headderpadding" id="reportprofile">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-flag icon-color-menusetting"
-                  ></i>
-                  Report
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headderpadding" id="signout">
-          <ul>
-            <li class="list-item page__background">
-              <div class="list-item__center">
-                <div class="list-item__title topixfont">
-                  <i class="zmdi zmdi-power icon-color-signout"
-                  ></i>
-                  Sign Out
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+
+
+
+
+
+
+
     </ons-page>
   </template>
 </ons-page>
