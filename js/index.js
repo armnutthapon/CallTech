@@ -246,14 +246,34 @@ function getmovieDetail(Target) {
             }
             else {
                 $('#goContact').click(function () {
+                    db.collection("user").add({
+                    
+                        money: 50000,
+                        })
+                    
                     document.querySelector('#myNavigator').pushPage('views/createdeal.html');
+
+
+                    // db.collection("user").update({
+                    //     money: 1002,
+                    // })
+                    //     .then(function (docRef) {
+                    //         console.log("Document written with ID: ", docRef.id);
+                    //     })
+                    //     .catch(function (error) {
+                    //         console.error("Error adding document: ", error);
+                    //     });
+                
+                
                 })
             }
         });
     });
 
 
+
 }
+
 
 
 var createAlertDialog = function () {
@@ -274,4 +294,15 @@ var hideAlertDialog = function () {
         .getElementById('my-alert-dialog')
         .hide();
 };
+
+// addWork.prototpe.addToHistory = function(workId){
+
+//     const currUserId = firebase.auth().currentUser.id;
+//     const userDoc = firebase.firestore().collection('users').doc(currUserId);
+
+//     userDoc.update[{
+//         favorites:firebase.firestore.FieldValue.arrayUnion
+//     }]
+
+// }
 
