@@ -61,7 +61,7 @@ $(function () {
             const aa = $(this).attr('id')
             getTechDetail(aa);
             console.log(aa);
-            document.querySelector('#myNavigator').pushPage('views/contact.html');
+            document.querySelector('#Navigator_home').pushPage('views/contact.html');
         })
     });
 
@@ -231,9 +231,7 @@ function getTechDetail(Target) {
         querySnapshot.forEach(function (doc) {
             if (doc.data().id == Target) {
                 const result =
-                    `       
-            <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
-
+                    `<img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
             <div>
                 <div class="detailName">
                 ${doc.data().name} </div>
@@ -251,17 +249,18 @@ function getTechDetail(Target) {
                     </div>
                 </div>
             </div> `
-            
+
                 $("#Tcontact").append(result)
 
-
+                doc.data().id = "";
             }
             else {
                 $('#goContact').click(function () {
 
-                    document.querySelector('#myNavigator').pushPage('views/createdeal.html');
+                    document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
+                    doc.data().id = "";
 
-                   
+
                 })
             }
         });
@@ -270,6 +269,8 @@ function getTechDetail(Target) {
 
 
 }
+
+
 
 
 
@@ -292,7 +293,9 @@ var hideAlertDialog = function () {
 };
 var notify = function () {
     ons.notification.alert('ทำรายการสำเร็จ');
-    document.querySelector('#myNavigator').popPage();
+    document.querySelector('#Navigator_home').popPage();
+    document.querySelector('#myNavigator_search').popPage();
+
 
     db.collection("history").doc("H1").update({
 
@@ -304,6 +307,9 @@ var notify = function () {
 
 
 };
+
+
+
 // addWork.prototpe.addToHistory = function(workId){
 
 //     const currUserId = firebase.auth().currentUser.id;
@@ -314,4 +320,3 @@ var notify = function () {
 //     }]
 
 // }
-
