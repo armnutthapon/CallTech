@@ -289,12 +289,14 @@ var createAlertDialog = function () {
     }
 };
 
-var hideAlertDialog = function () {
-    document
-        .getElementById('my-alert-dialog')
-        .hide();
-};
+var hideAlertDialog = function() {
+    document.getElementById('my-alert-dialog').hide();
 
+};
+var notify = function() {
+    ons.notification.alert('ทำรายการสำเร็จ');
+    document.querySelector('#myNavigator').popPage();
+};
 // addWork.prototpe.addToHistory = function(workId){
 
 //     const currUserId = firebase.auth().currentUser.id;
