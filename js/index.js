@@ -11,6 +11,20 @@ $(function () {
     });
 
 
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var email = user.email;
+            var displayName = user.displayName;
+            var img = `<img class="list-material__thumbnail" src="${user.photoURL}">`
+            $("#userProfile").append(img)
+            $("#userName").html(displayName)
+
+        } else {
+            window.location.href = "login.html";
+        }
+    });
+
     db.collection("popular").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             var row = `<ons-carousel-item>
@@ -45,7 +59,7 @@ $(function () {
         });
         $('ons-card').click(function () {
             const aa = $(this).attr('id')
-            getmovieDetail(aa);
+            getTechDetail(aa);
             console.log(aa);
             document.querySelector('#myNavigator').pushPage('views/contact.html');
         })
@@ -66,7 +80,7 @@ $(function () {
 
                     <div class="col-6">
                         <div class="headertitle">
-                            <ons-icon icon="md-star" style="color: #FFAA00;">
+                            <ons-icon icon="md-star" style="color: #FFgetmovieDetail00;">
                             </ons-icon> ${doc.data().point}
                         </div>
                     </div>
@@ -206,13 +220,13 @@ function getmovie3() {
         });
         $('#trends img').click(function () {
             const aa = $(this).attr('id')
-            getmovieDetail(aa)
+            getTechDetail(aa)
             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
         })
     });
 }
 
-function getmovieDetail(Target) {
+function getTechDetail(Target) {
     db.collection("technician").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             if (doc.data().id == Target) {
@@ -236,35 +250,18 @@ function getmovieDetail(Target) {
                         </ons-icon>  ${doc.data().rate}
                     </div>
                 </div>
-
-
-
             </div> `
+            
                 $("#Tcontact").append(result)
 
 
             }
             else {
                 $('#goContact').click(function () {
-                    db.collection("user").add({
-                    
-                        money: 50000,
-                        })
-                    
+
                     document.querySelector('#myNavigator').pushPage('views/createdeal.html');
 
-
-                    // db.collection("user").update({
-                    //     money: 1002,
-                    // })
-                    //     .then(function (docRef) {
-                    //         console.log("Document written with ID: ", docRef.id);
-                    //     })
-                    //     .catch(function (error) {
-                    //         console.error("Error adding document: ", error);
-                    //     });
-                
-                
+                   
                 })
             }
         });
@@ -289,13 +286,23 @@ var createAlertDialog = function () {
     }
 };
 
-var hideAlertDialog = function() {
+var hideAlertDialog = function () {
     document.getElementById('my-alert-dialog').hide();
 
 };
-var notify = function() {
+var notify = function () {
     ons.notification.alert('ทำรายการสำเร็จ');
     document.querySelector('#myNavigator').popPage();
+
+    db.collection("history").doc("H1").update({
+
+
+        money: 100022111120
+    })
+
+
+
+
 };
 // addWork.prototpe.addToHistory = function(workId){
 

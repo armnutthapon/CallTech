@@ -1,25 +1,48 @@
 var db = firebase.firestore();
-$(function() {
-    db.collection("movieDetail").get().then((querySnapshot) => {
+$(function () {
+    db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<div class="col-4 col-md-2 areaMovie movieF center" id="${doc.data().id}">
-                            <div class="user_thumbnail">
-                                <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
-                            </div>
+            var row = `<ons-carousel-item>
+            <ons-card  id="${doc.data().id}">
+                <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="headertitle">
+                        ${doc.data().name} </div>
+                    </div>
+
+                    <div class="col-6 text-right">
+                        <div class="headertitle">
+                            <ons-icon icon="md-star" style="color: #FFAA00;">
+                            </ons-icon> ${doc.data().rate}
                         </div>
-                `;
+                    </div>
+                </div>
+                <div class="row ml-1">
+                    <div class="col-5">
+                        <div class="detailLocation">${doc.data().location}</div>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="detailCategory text-right">${doc.data().type}</div>
+                    </div>
+                </div>        </ons-card>
+                </ons-carousel-item>
+        `;
             $('#listMovie').append(row);
         });
-        $("#listMovie .movieF").click(function() {
+
+        $('ons-card').click(function () {
             const aa = $(this).attr('id')
-            getmovieDetail(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/detailmovie.html');
+            getTechDetail(aa)
+            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
         })
     });
-    document.addEventListener('init', function(event) {
+    document.addEventListener('init', function (event) {
         var page = event.target;
         if (page.id === 'search') {
-            $("ons-carousel-item .button").click(function() {
+            $("ons-carousel-item .button").click(function () {
                 const category = $(this).attr('id')
                 getmovieCategory(category)
             })
@@ -32,44 +55,93 @@ $(function() {
 function Src() {
     const result = document.getElementById('Srcname').value;
     $('#listMovie').empty();
-    db.collection("movieDetail").get().then((querySnapshot) => {
+    db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             const titleMovie = doc.data().title;
             if (titleMovie.indexOf(result) != -1) {
-                var row = `<div class="col-4 col-md-2 areaMovie movieSrc" id="${doc.data().id}">
-                                <div class="user_thumbnail">
-                                    <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
-                                </div>
-                            </div>`;
+                var row = `<ons-carousel-item>
+                <ons-card  id="${doc.data().id}">
+                    <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="headertitle">
+                            ${doc.data().name} </div>
+                        </div>
+    
+                        <div class="col-6 text-right">
+                            <div class="headertitle">
+                                <ons-icon icon="md-star" style="color: #FFAA00;">
+                                </ons-icon> ${doc.data().rate}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-5">
+                            <div class="detailLocation">${doc.data().location}</div>
+                        </div>
+    
+                        <div class="col-7">
+                            <div class="detailCategory text-right">${doc.data().type}</div>
+                        </div>
+                    </div>        </ons-card>
+                    </ons-carousel-item>
+            `;
                 $('#listMovie').append(row);
+
             }
         });
-        $("#listMovie .movieSrc").click(function() {
+        $('ons-card').click(function () {
             const aa = $(this).attr('id')
-            getmovieDetail(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/detailmovie.html');
+            getTechDetail(aa)
+            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
         })
     });
 }
 
 function getmovieCategory(Type) {
     $('#listMovie').empty();
-    db.collection("movieDetail").get().then((querySnapshot) => {
+    db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             const typeMovie = doc.data().type;
             if (typeMovie === Type) {
-                var row = `<div class="col-4 col-md-2 areaMovie movieCat" id="${doc.data().id}">
-                                <div class="user_thumbnail">
-                                    <img src="${doc.data().img}" alt="" class="searchPoster mt-5"> 
-                                </div>
-                            </div>`;
+                var row = `<ons-carousel-item>
+                <ons-card  id="${doc.data().id}">
+                    <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
+    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="headertitle">
+                            ${doc.data().name} </div>
+                        </div>
+    
+                        <div class="col-6 text-right">
+                            <div class="headertitle">
+                                <ons-icon icon="md-star" style="color: #FFAA00;">
+                                </ons-icon> ${doc.data().rate}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-5">
+                            <div class="detailLocation">${doc.data().location}</div>
+                        </div>
+    
+                        <div class="col-7">
+                            <div class="detailCategory text-right">${doc.data().type}</div>
+                        </div>
+                    </div>        </ons-card>
+                    </ons-carousel-item>
+            `;
                 $('#listMovie').append(row);
             }
         });
-        $("#listMovie .movieCat").click(function() {
+        $('ons-card').click(function() {
             const aa = $(this).attr('id')
-            getmovieDetail(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/detailmovie.html');
+            getTechDetail(aa)
+            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
         })
     });
 }
+
+
