@@ -31,12 +31,12 @@ $(function() {
                 </div>        </ons-card>
                 </ons-carousel-item>
         `;
-            $('#listMovie').append(row);
+            $('#listTech').append(row);
         });
-        $("#listMovie ons-card").click(function() {
+        $("#listTech ons-card").click(function() {
             const aa = $(this).attr('id')
             getTechDetail2(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
+            document.querySelector('#Navigator_search').pushPage('views/contact.html');
 
         })
     });
@@ -45,7 +45,7 @@ $(function() {
         if (page.id === 'search') {
             $("ons-carousel-item .button").click(function() {
                 const category = $(this).attr('id')
-                getmovieCategory(category)
+                getTechType(category)
             })
         }
     });
@@ -55,11 +55,11 @@ $(function() {
 
 function Src() {
     const result = document.getElementById('Srcname').value;
-    $('#listMovie').empty();
+    $('#listTech').empty();
     db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            const titleMovie = doc.data().title;
-            if (titleMovie.indexOf(result) != -1) {
+            const TechName = doc.data().title;
+            if (TechName.indexOf(result) != -1) {
                 var row = `<ons-carousel-item>
                 <ons-card  id="${doc.data().id}">
                     <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
@@ -88,25 +88,25 @@ function Src() {
                     </div>        </ons-card>
                     </ons-carousel-item>
             `;
-                $('#listMovie').append(row);
+                $('#listTech').append(row);
             }
         });
-        $("#listMovie ons-card").click(function() {
+        $("#listTech ons-card").click(function() {
             const aa = $(this).attr('id')
             getTechDetail2(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
+            document.querySelector('#Navigator_search').pushPage('views/contact.html');
 
 
         })
     });
 }
 
-function getmovieCategory(Type) {
-    $('#listMovie').empty();
+function getTechType(Type) {
+    $('#listTech').empty();
     db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            const typeMovie = doc.data().type;
-            if (typeMovie === Type) {
+            const typeTech = doc.data().type;
+            if (typeTech === Type) {
                 var row = `<ons-carousel-item>
                 <ons-card  id="${doc.data().id}">
                     <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
@@ -135,13 +135,13 @@ function getmovieCategory(Type) {
                     </div>        </ons-card>
                     </ons-carousel-item>
             `;
-                $('#listMovie').append(row);
+                $('#listTech').append(row);
             }
         });
-        $("#listMovie ons-card").click(function() {
+        $("#listTech ons-card").click(function() {
             const aa = $(this).attr('id')
             getTechDetail2(aa)
-            document.querySelector('#myNavigator_search').pushPage('views/contact.html');
+            document.querySelector('#Navigator_search').pushPage('views/contact.html');
         })
     });
 }
@@ -176,7 +176,7 @@ function getTechDetail2(Target) {
             } else {
                 $('#goContact').click(function() {
 
-                    document.querySelector('#myNavigator_search').pushPage('views/createdeal.html');
+                    document.querySelector('#Navigator_search').pushPage('views/createdeal.html');
                     doc.data().id = "";
 
 

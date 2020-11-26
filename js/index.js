@@ -1,18 +1,17 @@
 var db = firebase.firestore();
 
-$(function() {
-    document.addEventListener('init', function(event) {
+$(function () {
+    document.addEventListener('init', function (event) {
         var page = event.target;
-        if (page.id === 'page1') {
-            getmovie();
-            getmovie2();
-            getmovie3();
-        }
+        // if (page.id === 'contact') {
+        //     document.querySelector('#Navigator_contact').pushPage('createdeal.html');
+
+        // }
     });
 
 
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             var email = user.email;
             var displayName = user.displayName;
@@ -58,7 +57,7 @@ $(function() {
         `;
             $('#popular').append(row);
         });
-        $('#pop ons-card').click(function() {
+        $('#pop ons-card').click(function () {
             const aa = $(this).attr('id')
             getTechDetail(aa);
             console.log(aa);
@@ -81,7 +80,7 @@ $(function() {
 
                     <div class="col-6">
                         <div class="headertitle">
-                            <ons-icon icon="md-star" style="color: #FFgetmovieDetail00;">
+                            <ons-icon icon="md-star" style="color: #FFAA00;">
                             </ons-icon> ${doc.data().point}
                         </div>
                     </div>
@@ -101,17 +100,12 @@ $(function() {
             $('#near').append(row);
         });
 
-        $('#near ons-card').click(function() {
-                const aa = $(this).attr('id')
-                getTechDetail(aa);
-                console.log(aa);
-                document.querySelector('#Navigator_home').pushPage('views/contact.html');
-            })
-            // $('.NewMovie img').click(function() {
-            //     const aa = $(this).attr('id')
-            //     getmovieDetail(aa)
-            //     document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
-            // })
+        $('#near ons-card').click(function () {
+            const aa = $(this).attr('id')
+            getTechDetail(aa);
+            console.log(aa);
+            document.querySelector('#Navigator_home').pushPage('views/contact.html');
+        })
     });
 
     // db.collection("technician").get().then((querySnapshot) => {
@@ -148,112 +142,114 @@ $(function() {
 
 })
 
-function getmovie() {
+// function getmovie() {
 
-    var continueCarousel = document.createElement('ons-carousel');
-    continueCarousel.setAttribute("swipeable", "");
-    continueCarousel.setAttribute("auto-scroll", "");
-    continueCarousel.setAttribute("overscrollable", "");
-    continueCarousel.setAttribute("item-width", "150px");
-    continueCarousel.setAttribute("id", "CarouselMovie");
-    $('#continue').append(continueCarousel);
+//     var continueCarousel = document.createElement('ons-carousel');
+//     continueCarousel.setAttribute("swipeable", "");
+//     continueCarousel.setAttribute("auto-scroll", "");
+//     continueCarousel.setAttribute("overscrollable", "");
+//     continueCarousel.setAttribute("item-width", "150px");
+//     continueCarousel.setAttribute("id", "CarouselMovie");
+//     $('#continue').append(continueCarousel);
 
-    db.collection("continue").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" id="continue">
-                <ons-carousel-item>
-                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
-                </ons-carousel-item>
-            </div>`
-            $('#CarouselMovie').append(row);
-        });
-        $('#continue img').click(function() {
-            const aa = $(this).attr('id')
-            getmovieDetail(aa)
-            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
-        })
-
-
-    });
-}
-
-function getmovie2() {
-
-    var recommendCarousel = document.createElement('ons-carousel');
-    recommendCarousel.setAttribute("swipeable", "");
-    recommendCarousel.setAttribute("auto-scroll", "");
-    recommendCarousel.setAttribute("overscrollable", "");
-    recommendCarousel.setAttribute("item-width", "150px");
-    recommendCarousel.setAttribute("id", "CarouselMovie2");
-    $('#recommend').append(recommendCarousel);
+//     db.collection("continue").get().then((querySnapshot) => {
+//         querySnapshot.forEach((doc) => {
+//             var row = ` <div style="width:150px;" id="continue">
+//                 <ons-carousel-item>
+//                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
+//                 </ons-carousel-item>
+//             </div>`
+//             $('#CarouselMovie').append(row);
+//         });
+//         $('#continue img').click(function() {
+//             const aa = $(this).attr('id')
+//             getmovieDetail(aa)
+//             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
+//         })
 
 
+//     });
+// }
 
-    db.collection("recommend").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" id="recommend" >
-                <ons-carousel-item>
-                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
-                </ons-carousel-item>
-            </div>`
-            $('#CarouselMovie2').append(row);
-        });
-        $('#recommend img').click(function() {
-            const aa = $(this).attr('id')
-            getmovieDetail(aa)
-            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
-        })
-    });
-}
+// function getmovie2() {
 
-function getmovie3() {
-
-    var trendsCarousel = document.createElement('ons-carousel');
-    trendsCarousel.setAttribute("swipeable", "");
-    trendsCarousel.setAttribute("auto-scroll", "");
-    trendsCarousel.setAttribute("overscrollable", "");
-    trendsCarousel.setAttribute("item-width", "150px");
-    trendsCarousel.setAttribute("id", "CarouselMovie3");
-    $('#trends').append(trendsCarousel);
+//     var recommendCarousel = document.createElement('ons-carousel');
+//     recommendCarousel.setAttribute("swipeable", "");
+//     recommendCarousel.setAttribute("auto-scroll", "");
+//     recommendCarousel.setAttribute("overscrollable", "");
+//     recommendCarousel.setAttribute("item-width", "150px");
+//     recommendCarousel.setAttribute("id", "CarouselMovie2");
+//     $('#recommend').append(recommendCarousel);
 
 
 
-    db.collection("trends").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            var row = ` <div style="width:150px;" id="trends">
-                <ons-carousel-item>
-                    <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
-                </ons-carousel-item>
-            </div>`
-            $('#CarouselMovie3').append(row);
-        });
-        $('#trends img').click(function() {
-            const aa = $(this).attr('id')
-            getTechDetail(aa)
-            document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
-        })
-    });
-}
+//     db.collection("recommend").get().then((querySnapshot) => {
+//         querySnapshot.forEach((doc) => {
+//             var row = ` <div style="width:150px;" id="recommend" >
+//                 <ons-carousel-item>
+//                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
+//                 </ons-carousel-item>
+//             </div>`
+//             $('#CarouselMovie2').append(row);
+//         });
+//         $('#recommend img').click(function() {
+//             const aa = $(this).attr('id')
+//             getmovieDetail(aa)
+//             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
+//         })
+//     });
+// }
+
+// function getmovie3() {
+
+//     var trendsCarousel = document.createElement('ons-carousel');
+//     trendsCarousel.setAttribute("swipeable", "");
+//     trendsCarousel.setAttribute("auto-scroll", "");
+//     trendsCarousel.setAttribute("overscrollable", "");
+//     trendsCarousel.setAttribute("item-width", "150px");
+//     trendsCarousel.setAttribute("id", "CarouselMovie3");
+//     $('#trends').append(trendsCarousel);
+
+
+
+//     db.collection("trends").get().then((querySnapshot) => {
+//         querySnapshot.forEach((doc) => {
+//             var row = ` <div style="width:150px;" id="trends">
+//                 <ons-carousel-item>
+//                     <img src="${doc.data().img}" id="${doc.data().id}"width="100%" style="padding-right:15px" class="smallposter">
+//                 </ons-carousel-item>
+//             </div>`
+//             $('#CarouselMovie3').append(row);
+//         });
+//         $('#trends img').click(function() {
+//             const aa = $(this).attr('id')
+//             getTechDetail(aa)
+//             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
+//         })
+//     });
+// }
 
 function getTechDetail(Target) {
 
 
 
 
-    db.collection("technician").get().then(function(querySnapshot) {
+    db.collection("technician").get().then(function (querySnapshot) {
 
 
 
-        querySnapshot.forEach(function(doc) {
+        querySnapshot.forEach(function (doc) {
             if (doc.data().id == Target) {
                 const result =
-                    `<img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
-            <div>
+
+                    `
+                    <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
+                <div>
                 <div class="detailName">
                 ${doc.data().name} </div>
-            </div>
+                </div>
 
-            <div class="row mt-2">
+                 <div class="row mt-2">
                 <div class="col-4 pl-5 detailLocal">${doc.data().location}</div>
                 <div class="col-5 detailCat">${doc.data().type}</div>
 
@@ -264,21 +260,108 @@ function getTechDetail(Target) {
                         </ons-icon>  ${doc.data().rate}
                     </div>
                 </div>
-            </div> `
-
+                 </div> `
                 $("#Tcontact").append(result)
 
                 doc.data().id = "";
             } else {
-                $('#goContact').click(function() {
 
+
+                $('#goContact').click(function () {
+
+                   
+
+                    const TnameResult = `<input type="text" id="Tname" class="form-control inputBorder mt-5" name="" value="${doc.data().name}" readonly
+                    aria-describedby="helpId" style="height: 60px;" required="required">`
+    
+                    $('#Tname').append(TnameResult);
+    
                     document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
-                    doc.data().id = "";
+
+                    
 
 
                 })
+
             }
+
         });
+
+
+
+    });
+
+
+
+
+
+}
+
+
+
+function getTechName(Target) {
+
+
+
+
+    db.collection("technician").get().then(function (querySnapshot) {
+
+
+
+        // querySnapshot.forEach(function (doc) {
+        //     if (doc.data().id == Target) {
+        //         const result =
+
+        //             `
+        //             <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
+        //         <div>
+        //         <div class="detailName">
+        //         ${doc.data().name} </div>
+        //         </div>
+
+        //          <div class="row mt-2">
+        //         <div class="col-4 pl-5 detailLocal">${doc.data().location}</div>
+        //         <div class="col-5 detailCat">${doc.data().type}</div>
+
+
+        //         <div class="col-3 text-right">
+        //             <div class="detailRate ">
+        //                 <ons-icon icon="md-star" style="color: #FFAA00;">
+        //                 </ons-icon>  ${doc.data().rate}
+        //             </div>
+        //         </div>
+        //          </div> `
+        //         $("#Tcontact").append(result)
+
+
+                
+
+        //         doc.data().id = "";
+        //     } else {
+
+                
+        //         const TnameResult = `<input type="text" id="Tname" class="form-control inputBorder mt-5" name="" value="${doc.data().name}" readonly
+        //         aria-describedby="helpId" style="height: 60px;" required="required">`
+
+        //         $('#Tname').append(TnameResult);
+
+        //         $('#goContact').click(function () {
+
+                   
+
+        //             document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
+
+                    
+
+
+        //         })
+
+        //     }
+
+        // });
+
+
+
     });
 
 
@@ -291,7 +374,9 @@ function getTechDetail(Target) {
 
 
 
-var createAlertDialog = function() {
+
+
+var createAlertDialog = function () {
     var dialog = document.getElementById('my-alert-dialog');
 
 
@@ -304,38 +389,31 @@ var createAlertDialog = function() {
         dialog.show();
     } else {
         ons.createElement('alert-dialog.html', { append: true })
-            .then(function(dialog) {
+            .then(function (dialog) {
                 dialog.show();
             });
     }
 };
 
-var hideAlertDialog = function() {
+var hideAlertDialog = function () {
     document.getElementById('my-alert-dialog').hide();
 
 };
-var notify = function() {
+var notify = function () {
 
 
     document.querySelector('#Navigator_home').popPage();
-    document.querySelector('#myNavigator_search').popPage();
-
-
-
+    document.querySelector('#Navigator_search').popPage();
 
     ons.notification.alert('ทำรายการสำเร็จ!');
 
-    db.collection("technician").get().then(function(querySnapshot) {})
+    db.collection("technician").get().then(function (querySnapshot) { })
 
     db.collection("history").add({
 
-
         topic: document.getElementById('problem').value,
         detail: document.getElementById('problemDetail').value,
-
         Tname: document.getElementById('Tname').value,
-
-
 
     })
 
