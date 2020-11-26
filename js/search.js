@@ -2,7 +2,8 @@ var db = firebase.firestore();
 $(function() {
     db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<ons-carousel-item>
+            var row = `
+            <ons-carousel-item>
             <ons-card  id="${doc.data().id}">
                 <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
 
@@ -36,7 +37,7 @@ $(function() {
             const aa = $(this).attr('id')
             getTechDetail2(aa)
             document.querySelector('#myNavigator_search').pushPage('views/contact.html');
-            
+
         })
     });
     document.addEventListener('init', function(event) {
@@ -106,7 +107,7 @@ function getmovieCategory(Type) {
         querySnapshot.forEach((doc) => {
             const typeMovie = doc.data().type;
             if (typeMovie === Type) {
-                var row =`<ons-carousel-item>
+                var row = `<ons-carousel-item>
                 <ons-card  id="${doc.data().id}">
                     <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
     
@@ -147,8 +148,8 @@ function getmovieCategory(Type) {
 
 
 function getTechDetail2(Target) {
-    db.collection("technician").get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+    db.collection("technician").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
                 const result =
                     `<img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
@@ -172,9 +173,8 @@ function getTechDetail2(Target) {
 
                 $("#Tcontact").append(result)
 
-            }
-            else {
-                $('#goContact').click(function () {
+            } else {
+                $('#goContact').click(function() {
 
                     document.querySelector('#myNavigator_search').pushPage('views/createdeal.html');
                     doc.data().id = "";

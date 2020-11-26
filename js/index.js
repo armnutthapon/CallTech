@@ -1,7 +1,7 @@
 var db = firebase.firestore();
 
-$(function () {
-    document.addEventListener('init', function (event) {
+$(function() {
+    document.addEventListener('init', function(event) {
         var page = event.target;
         if (page.id === 'page1') {
             getmovie();
@@ -12,7 +12,7 @@ $(function () {
 
 
 
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var email = user.email;
             var displayName = user.displayName;
@@ -27,8 +27,9 @@ $(function () {
 
     db.collection("popular").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<ons-carousel-item>
-            <ons-card  id="${doc.data().id}">
+            var row = `<div id="pop">
+            <ons-carousel-item>
+            <ons-card id="${doc.data().id}">
                 <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
 
                 <div class="row">
@@ -53,11 +54,11 @@ $(function () {
                         <div class="detailCategory text-right">${doc.data().type}</div>
                     </div>
                 </div>        </ons-card>
-                </ons-carousel-item>
+                </ons-carousel-item></div>        
         `;
             $('#popular').append(row);
         });
-        $('ons-card').click(function () {
+        $('#pop ons-card').click(function() {
             const aa = $(this).attr('id')
             getTechDetail(aa);
             console.log(aa);
@@ -68,7 +69,7 @@ $(function () {
 
     db.collection("near").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = ` <ons-carousel-item>
+            var row = `<div id="near">        <ons-carousel-item>
             <ons-card>
                 <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%">
 
@@ -95,14 +96,22 @@ $(function () {
                     </div>
                 </div>        </ons-card>
                 </ons-carousel-item>
+                </div>        
         `;
             $('#near').append(row);
         });
-        // $('.NewMovie img').click(function() {
-        //     const aa = $(this).attr('id')
-        //     getmovieDetail(aa)
-        //     document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
-        // })
+
+        $('#near ons-card').click(function() {
+                const aa = $(this).attr('id')
+                getTechDetail(aa);
+                console.log(aa);
+                document.querySelector('#Navigator_home').pushPage('views/contact.html');
+            })
+            // $('.NewMovie img').click(function() {
+            //     const aa = $(this).attr('id')
+            //     getmovieDetail(aa)
+            //     document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
+            // })
     });
 
     // db.collection("technician").get().then((querySnapshot) => {
@@ -158,7 +167,7 @@ function getmovie() {
             </div>`
             $('#CarouselMovie').append(row);
         });
-        $('#continue img').click(function () {
+        $('#continue img').click(function() {
             const aa = $(this).attr('id')
             getmovieDetail(aa)
             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
@@ -189,7 +198,7 @@ function getmovie2() {
             </div>`
             $('#CarouselMovie2').append(row);
         });
-        $('#recommend img').click(function () {
+        $('#recommend img').click(function() {
             const aa = $(this).attr('id')
             getmovieDetail(aa)
             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
@@ -218,7 +227,7 @@ function getmovie3() {
             </div>`
             $('#CarouselMovie3').append(row);
         });
-        $('#trends img').click(function () {
+        $('#trends img').click(function() {
             const aa = $(this).attr('id')
             getTechDetail(aa)
             document.querySelector('#myNavigator').pushPage('views/detailmovie.html');
@@ -227,8 +236,15 @@ function getmovie3() {
 }
 
 function getTechDetail(Target) {
-    db.collection("technician").get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+
+
+
+
+    db.collection("technician").get().then(function(querySnapshot) {
+
+
+
+        querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
                 const result =
                     `<img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
@@ -253,9 +269,8 @@ function getTechDetail(Target) {
                 $("#Tcontact").append(result)
 
                 doc.data().id = "";
-            }
-            else {
-                $('#goContact').click(function () {
+            } else {
+                $('#goContact').click(function() {
 
                     document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
                     doc.data().id = "";
@@ -268,39 +283,60 @@ function getTechDetail(Target) {
 
 
 
+
+
 }
 
 
 
 
 
-var createAlertDialog = function () {
+var createAlertDialog = function() {
     var dialog = document.getElementById('my-alert-dialog');
+
+
+
+
+
+
 
     if (dialog) {
         dialog.show();
     } else {
         ons.createElement('alert-dialog.html', { append: true })
-            .then(function (dialog) {
+            .then(function(dialog) {
                 dialog.show();
             });
     }
 };
 
-var hideAlertDialog = function () {
+var hideAlertDialog = function() {
     document.getElementById('my-alert-dialog').hide();
 
 };
-var notify = function () {
-    ons.notification.alert('ทำรายการสำเร็จ');
+var notify = function() {
+
+
     document.querySelector('#Navigator_home').popPage();
     document.querySelector('#myNavigator_search').popPage();
 
 
-    db.collection("history").doc("H1").update({
 
 
-        money: 100022111120
+    ons.notification.alert('ทำรายการสำเร็จ!');
+
+    db.collection("technician").get().then(function(querySnapshot) {})
+
+    db.collection("history").add({
+
+
+        topic: document.getElementById('problem').value,
+        detail: document.getElementById('problemDetail').value,
+
+        Tname: document.getElementById('Tname').value,
+
+
+
     })
 
 

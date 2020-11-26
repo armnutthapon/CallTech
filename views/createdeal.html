@@ -13,42 +13,41 @@
 
 
 
-        <div class="container text-center pt-5">
+    <div class="container text-center pt-5">
 
-            <div class="form-group text-center container">
+        <div class="form-group container">
 
-
-
-
-                <input type="text" class="form-control inputBorder mt-5" name="" id="" aria-describedby="helpId"
-                    placeholder="ปัญหาที่พบ" style="height: 60px;">
-
-                <textarea class="form-control inputBorder mt-5" aria-label="With textarea" placeholder="รายละเอียดปัญหา"
-                    style="height: 250px;"></textarea>
-
-                <div class="mt-5 text-center">
-                    <p>แนบรูปปัญหา :</p>
-                    <input type="file" accept="image/*" capture="camera">
-
-                </div>
+            <input type="text" id="Tname" class="form-control inputBorder mt-5" name="" value="ชื่อช่าง" readonly aria-describedby="helpId" placeholder="ปัญหาที่พบ" style="height: 60px;" required="required">
 
 
-                <input type="submit" class="btn btnContact " placeholder="ติดต่อช่าง" onclick="createAlertDialog()">
 
+            <input type="text" id="problem" class="form-control inputBorder mt-5" name="" aria-describedby="helpId" placeholder="ปัญหาที่พบ" style="height: 60px;" required="required">
 
+            <textarea id="problemDetail" class="form-control inputBorder mt-5" aria-label="With textarea" placeholder="รายละเอียดปัญหา" style="height: 250px;"></textarea>
+
+            <div class="mt-5 text-center">
+                <p>แนบรูปปัญหา :</p>
+                <input type="file" id="pic" accept="image/*" capture="camera">
 
             </div>
-            <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
-                <div class="alert-dialog-title font">ราคา</div>
-                <div class="alert-dialog-content font">
 
-                    ค่าบริการ <span style="color: red;">500</span> บาท </div>
-                <div class="alert-dialog-footer">
-                    <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
-                    <ons-alert-dialog-button onclick="notify()">OK</ons-alert-dialog-button>
-                </div>
-            </ons-alert-dialog>
+
+            <input type="submit" class="btn btnContact " placeholder="ติดต่อช่าง" onclick="createAlertDialog()">
+
+
+
         </div>
+        <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+            <div class="alert-dialog-title font">ราคา</div>
+            <div class="alert-dialog-content font">
+
+                ค่าบริการ <span style="color: red;">500</span> บาท </div>
+            <div class="alert-dialog-footer">
+                <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
+                <ons-alert-dialog-button onclick="notify()">OK</ons-alert-dialog-button>
+            </div>
+        </ons-alert-dialog>
+    </div>
 
 
     <!-- 
