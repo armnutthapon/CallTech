@@ -66,7 +66,6 @@
     }
     
     .toolbar {
-    
         padding-top: 20px;
         height: 70px;
         font-family: 'Mitr', sans-serif;
@@ -113,7 +112,9 @@
         background-color: #FFAA00;
     }
     
-    .searchBar {}
+    .Mitr {
+        font-family: 'Mitr', sans-serif
+    }
     
     .search-input {
         font-family: 'Mitr', sans-serif;

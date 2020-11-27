@@ -1,7 +1,7 @@
 var db = firebase.firestore();
 
-$(function () {
-    document.addEventListener('init', function (event) {
+$(function() {
+    document.addEventListener('init', function(event) {
         var page = event.target;
         // if (page.id === 'contact') {
         //     document.querySelector('#Navigator_contact').pushPage('createdeal.html');
@@ -11,7 +11,7 @@ $(function () {
 
 
 
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var email = user.email;
             var displayName = user.displayName;
@@ -57,10 +57,11 @@ $(function () {
         `;
             $('#popular').append(row);
         });
-        $('#pop ons-card').click(function () {
+        $('#pop ons-card').click(function() {
             const aa = $(this).attr('id')
             getTechDetail(aa);
-            console.log(aa);
+            const bb = $(this).attr('id')
+            getTechName(bb);
             document.querySelector('#Navigator_home').pushPage('views/contact.html');
         })
     });
@@ -100,10 +101,12 @@ $(function () {
             $('#near').append(row);
         });
 
-        $('#near ons-card').click(function () {
+        $('#near ons-card').click(function() {
             const aa = $(this).attr('id')
             getTechDetail(aa);
-            console.log(aa);
+            const bb = $(this).attr('id')
+            getTechName(bb);
+            console.log(bb);
             document.querySelector('#Navigator_home').pushPage('views/contact.html');
         })
     });
@@ -230,18 +233,11 @@ $(function () {
 // }
 
 function getTechDetail(Target) {
-
-
-
-
-    db.collection("technician").get().then(function (querySnapshot) {
-
-
-
-        querySnapshot.forEach(function (doc) {
+    var nameTech = "";
+    db.collection("technician").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
                 const result =
-
                     `
                     <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
                 <div>
@@ -261,29 +257,16 @@ function getTechDetail(Target) {
                     </div>
                 </div>
                  </div> `
+
                 $("#Tcontact").append(result)
+                nameTech = doc.data().name;
+            } else {}
 
-                doc.data().id = "";
-            } else {
-
-
-                $('#goContact').click(function () {
-
-                   
-
-                    const TnameResult = `<input type="text" id="Tname" class="form-control inputBorder mt-5" name="" value="${doc.data().name}" readonly
-                    aria-describedby="helpId" style="height: 60px;" required="required">`
-    
-                    $('#Tname').append(TnameResult);
-    
-                    document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
-
-                    
+            $('#goContact').click(function() {
+                document.querySelector('#Navigator_home').pushPage('views/createdeal.html', { data: { title: nameTech } });
+            })
 
 
-                })
-
-            }
 
         });
 
@@ -296,141 +279,3 @@ function getTechDetail(Target) {
 
 
 }
-
-
-
-function getTechName(Target) {
-
-
-
-
-    db.collection("technician").get().then(function (querySnapshot) {
-
-
-
-        // querySnapshot.forEach(function (doc) {
-        //     if (doc.data().id == Target) {
-        //         const result =
-
-        //             `
-        //             <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
-        //         <div>
-        //         <div class="detailName">
-        //         ${doc.data().name} </div>
-        //         </div>
-
-        //          <div class="row mt-2">
-        //         <div class="col-4 pl-5 detailLocal">${doc.data().location}</div>
-        //         <div class="col-5 detailCat">${doc.data().type}</div>
-
-
-        //         <div class="col-3 text-right">
-        //             <div class="detailRate ">
-        //                 <ons-icon icon="md-star" style="color: #FFAA00;">
-        //                 </ons-icon>  ${doc.data().rate}
-        //             </div>
-        //         </div>
-        //          </div> `
-        //         $("#Tcontact").append(result)
-
-
-                
-
-        //         doc.data().id = "";
-        //     } else {
-
-                
-        //         const TnameResult = `<input type="text" id="Tname" class="form-control inputBorder mt-5" name="" value="${doc.data().name}" readonly
-        //         aria-describedby="helpId" style="height: 60px;" required="required">`
-
-        //         $('#Tname').append(TnameResult);
-
-        //         $('#goContact').click(function () {
-
-                   
-
-        //             document.querySelector('#Navigator_home').pushPage('views/createdeal.html');
-
-                    
-
-
-        //         })
-
-        //     }
-
-        // });
-
-
-
-    });
-
-
-
-
-
-}
-
-
-
-
-
-
-
-var createAlertDialog = function () {
-    var dialog = document.getElementById('my-alert-dialog');
-
-
-
-
-
-
-
-    if (dialog) {
-        dialog.show();
-    } else {
-        ons.createElement('alert-dialog.html', { append: true })
-            .then(function (dialog) {
-                dialog.show();
-            });
-    }
-};
-
-var hideAlertDialog = function () {
-    document.getElementById('my-alert-dialog').hide();
-
-};
-var notify = function () {
-
-
-    document.querySelector('#Navigator_home').popPage();
-    document.querySelector('#Navigator_search').popPage();
-
-    ons.notification.alert('ทำรายการสำเร็จ!');
-
-    db.collection("technician").get().then(function (querySnapshot) { })
-
-    db.collection("history").add({
-
-        topic: document.getElementById('problem').value,
-        detail: document.getElementById('problemDetail').value,
-        Tname: document.getElementById('Tname').value,
-
-    })
-
-
-
-
-};
-
-
-
-// addWork.prototpe.addToHistory = function(workId){
-
-//     const currUserId = firebase.auth().currentUser.id;
-//     const userDoc = firebase.firestore().collection('users').doc(currUserId);
-
-//     userDoc.update[{
-//         favorites:firebase.firestore.FieldValue.arrayUnion
-//     }]
-
-// }
