@@ -32,13 +32,13 @@ $(function() {
                 <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
 
                 <div class="row">
-                    <div class="col-6">
-                        <div class="headertitle">
+                    <div class="col-8">
+                        <div class="cardTechName">
                         ${doc.data().name} </div>
                     </div>
 
-                    <div class="col-6 text-right">
-                        <div class="headertitle">
+                    <div class="col-4 text-right">
+                        <div class="cardTechName">
                             <ons-icon icon="md-star" style="color: #FFAA00;">
                             </ons-icon> ${doc.data().rate}
                         </div>
@@ -69,30 +69,31 @@ $(function() {
 
     db.collection("near").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `<div id="near">        <ons-carousel-item>
-            <ons-card>
-                <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%">
+            var row = `<div id="near">        
+            <ons-carousel-item>
+            <ons-card id="${doc.data().id}">
+                <img src="${doc.data().pic}" alt="Onsen UI" class = "picCard" >
 
                 <div class="row">
                     <div class="col-6">
-                        <div class="headertitle">
+                        <div class="cardTechName">
                         ${doc.data().name} </div>
                     </div>
 
-                    <div class="col-6">
-                        <div class="headertitle">
+                    <div class="col-6 text-right">
+                        <div class="cardTechName">
                             <ons-icon icon="md-star" style="color: #FFAA00;">
-                            </ons-icon> ${doc.data().point}
+                            </ons-icon> ${doc.data().rate}
                         </div>
                     </div>
                 </div>
                 <div class="row ml-1">
-                    <div class="col-3">
+                    <div class="col-5">
                         <div class="detailLocation">${doc.data().location}</div>
                     </div>
 
-                    <div class="col-9">
-                        <div class="detailCategory">${doc.data().type}</div>
+                    <div class="col-7">
+                        <div class="detailCategory text-right">${doc.data().type}</div>
                     </div>
                 </div>        </ons-card>
                 </ons-carousel-item>
@@ -121,7 +122,7 @@ function getTechDetail(Target) {
             if (doc.data().id == Target) {
                 const result =
                     `
-                    <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
+                    <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picCard">
                 <div>
                 <div class="detailName">
                 ${doc.data().name} </div>
@@ -133,7 +134,7 @@ function getTechDetail(Target) {
 
 
                 <div class="col-3 text-right">
-                    <div class="detailRate ">
+                    <div class="detailRate" style="color: #FFAA00;">
                         <ons-icon icon="md-star" style="color: #FFAA00;">
                         </ons-icon>  ${doc.data().rate}
                     </div>

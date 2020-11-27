@@ -124,14 +124,14 @@
     }
     
     .detailCategory {
-        font-size: 18px;
+        font-size: 16px;
         color: #747474;
     }
     
     .detailLocation {
         color: #FFAA00;
         text-align: start;
-        font-size: 18px;
+        font-size: 16px;
         color: #747474;
     }
     
@@ -203,12 +203,16 @@
     }
 
 
-    .historyTopic{ 
+    .historyTopic{        
+        font-weight: bold; 
+        color: #3E3F68;
         font-size: 22px;
     }
 
     .historyDetail{
         font-size: 16px;
+        color: #3E3F68;
+
     }
 
     .historyIcon{
@@ -217,10 +221,13 @@
     }
 
     .historyStatus{
+        
         text-align: right;color: #FFAA00;}
 
     .historyTech{ 
         text-align: right;
+        color: #3E3F68;
+
     }
 
     .historyTechName{ 
@@ -228,3 +235,16 @@
     }
 
 
+    .cardTechName{
+        padding: 10px 0 0 5px;
+        font-size: 20px;
+        color: #3E3F68;
+        font-family: 'Mitr', sans-serif;
+        font-weight: bold;
+    }
+
+    .hisBorder{
+      margin-bottom: 20px;
+        border: 2px solid #FFAA00;
+        border-radius: 15px;
+    }

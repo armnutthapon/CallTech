@@ -4,7 +4,7 @@ $(function () {
 
     db.collection("history").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            var row = `  <ons-card>
+            var row = `  <ons-card class="hisBorder">
             <div class="historyTopic">${doc.data().topic}</div>
             <div class="historyDetail">${doc.data().detail}</div>
             <div class="historyStatus">
