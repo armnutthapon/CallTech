@@ -172,12 +172,12 @@ function getTechDetail2(Target) {
             </div> `
 
                 $("#Tcontact").append(result)
+                nameTech = doc.data().name;
 
             } else {
                 $('#goContact').click(function() {
 
-                    document.querySelector('#Navigator_search').pushPage('views/createdeal.html');
-                    doc.data().id = "";
+                    document.querySelector('#Navigator_search').pushPage('views/createdeal.html', { data: { title: nameTech } });
 
 
                 })

@@ -169,10 +169,14 @@
         margin-top: 100px;
     }
     
-    .paddingtop {
-        padding-top: 50px;
+    .MT {
+        margin-top: 10px;
     }
     
+    .MT50{
+        margin-top: 50px;
+    }
+
     .font {
         font-family: 'Mitr', sans-serif;
     }
@@ -197,3 +201,30 @@
     .toolbar__center:first-child:last-child {
         font-family: 'Mitr', sans-serif;
     }
+
+
+    .historyTopic{ 
+        font-size: 22px;
+    }
+
+    .historyDetail{
+        font-size: 16px;
+    }
+
+    .historyIcon{
+        color: #FFAA00; 
+        font-size: 20px;
+    }
+
+    .historyStatus{
+        text-align: right;color: #FFAA00;}
+
+    .historyTech{ 
+        text-align: right;
+    }
+
+    .historyTechName{ 
+        color: #FFAA00;;
+    }
+
+
