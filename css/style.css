@@ -78,6 +78,12 @@
         font-weight: bold;
     }
     
+    .toolbarPivacy {
+        color: #3E3F68;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
     .menuHome {
         text-align: center;
         font-size: 12px;
@@ -173,10 +179,10 @@
         margin-top: 10px;
     }
     
-    .MT50{
+    .MT50 {
         margin-top: 50px;
     }
-
+    
     .font {
         font-family: 'Mitr', sans-serif;
     }
@@ -201,50 +207,60 @@
     .toolbar__center:first-child:last-child {
         font-family: 'Mitr', sans-serif;
     }
-
-
-    .historyTopic{        
-        font-weight: bold; 
+    
+    .historyTopic {
+        font-weight: bold;
         color: #3E3F68;
         font-size: 22px;
     }
-
-    .historyDetail{
+    
+    .historyDetail {
         font-size: 16px;
         color: #3E3F68;
-
     }
-
-    .historyIcon{
-        color: #FFAA00; 
+    
+    .historyIcon {
+        color: #FFAA00;
         font-size: 20px;
     }
-
-    .historyStatus{
-        
-        text-align: right;color: #FFAA00;}
-
-    .historyTech{ 
+    
+    .historyStatus {
+        text-align: right;
+        color: #FFAA00;
+    }
+    
+    .historyTech {
         text-align: right;
         color: #3E3F68;
-
     }
-
-    .historyTechName{ 
-        color: #FFAA00;;
+    
+    .historyTechName {
+        color: #FFAA00;
+        ;
     }
-
-
-    .cardTechName{
+    
+    .cardTechName {
         padding: 10px 0 0 5px;
         font-size: 20px;
         color: #3E3F68;
         font-family: 'Mitr', sans-serif;
         font-weight: bold;
     }
-
-    .hisBorder{
-      margin-bottom: 20px;
+    
+    .hisBorder {
+        margin-bottom: 20px;
         border: 2px solid #FFAA00;
         border-radius: 15px;
+    }
+    
+    .selectLanguage {
+        font-family: 'Mitr', sans-serif;
+        color: #3E3F68;
+        font-size: 20px;
+    }
+    
+    .commentPic {
+        height: 40px;
+        width: 90%;
+        border-radius: 50%;
     }

@@ -1,14 +1,13 @@
-.picT{
-height: 200px;
-border-radius: 15px;
+.picT {
+    height: 200px;
+    border-radius: 15px;
 }
 
-.margintop{
+.margintop {
     margin-top: 50px;
 }
 
-
-.detailName{
+.detailName {
     padding: 26px 0 0 20px;
     font-size: 20px;
     color: #3E3F68;
@@ -16,29 +15,35 @@ border-radius: 15px;
     font-weight: bold;
 }
 
-.detailRate{
+.detailRate {
+    font-size: 18px;
+    color: #FFAA00;
     text-align: right;
 }
 
+.commentRate {
+    font-size: 14px;
+    color: #FFAA00;
+    text-align: right;
+}
 
-.detailLocal{   
-    padding: 0 0 0 0; 
+.detailLocal {
+    padding: 0 0 0 0;
     text-align: left;
     font-size: 16px;
     color: #747474;
     font-family: 'Mitr', sans-serif;
-    }
+}
 
-.detailCat{  
+.detailCat {
     text-align: left;
     font-size: 16px;
     color: #747474;
-    font-family: 'Mitr', sans-serif;}
+    font-family: 'Mitr', sans-serif;
+}
 
-
-
-    .btnContact{
-        background-color: #FFAA00;
-        color: white;
-        border-radius: 15px;
-    }
+.btnContact {
+    background-color: #FFAA00;
+    color: white;
+    border-radius: 15px;
+}

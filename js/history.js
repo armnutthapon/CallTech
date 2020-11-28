@@ -1,6 +1,6 @@
 var db = firebase.firestore();
 
-$(function () {
+$(function() {
 
     db.collection("history").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -16,33 +16,42 @@ $(function () {
         `;
             $('#showHistory').append(row);
         });
-        // $('#pop ons-card').click(function() {
-        //     const aa = $(this).attr('id')
-        //     getTechDetail(aa);
-        //     const bb = $(this).attr('id')
-        //     getTechName(bb);
-        //     document.querySelector('#Navigator_home').pushPage('views/contact.html');
-        // })
-    });
 
+    });
 
 })
 
 
+var notnull = function() {
+    var problem = document.getElementById('problem').value;
+    var problemDetail = document.getElementById('problemDetail').value;
+    if (problem === '' && problemDetail === '') {
+        ons.notification.alert('กรุณากรอกข้อมูลให้ครบถ้วน!');
+    } else if (problemDetail === '') {
+        ons.notification.alert('กรุณาระบุรายละเอียดของปัญหา!');
+    } else if (problem === '') {
+        ons.notification.alert('กรุณาระบุปัญหา!');
+    } else {
 
-var createAlertDialog = function () {
+        createAlertDialog();
+    }
+
+}
+
+
+var createAlertDialog = function() {
     var dialog = document.getElementById('my-alert-dialog');
     if (dialog) {
         dialog.show();
     } else {
         ons.createElement('alert-dialog.html', { append: true })
-            .then(function (dialog) {
+            .then(function(dialog) {
                 dialog.show();
             });
     }
 };
 
-var hideAlertDialog = function () {
+var hideAlertDialog = function() {
     document.getElementById('my-alert-dialog').hide();
 
 };
@@ -60,6 +69,3 @@ const notify = () => {
 
     })
 };
-
-
-
