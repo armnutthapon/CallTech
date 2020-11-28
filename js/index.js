@@ -179,7 +179,6 @@ function getTechDetail(Target) {
                     </div>
                 </div>`;
             $('#showComment').append(row);
-            console.log("gg");
         });
 
 

@@ -11,14 +11,17 @@ hr {
 }
 
 .title {
+    margin-bottom: 30px;
+    font-family: 'Mitr', sans-serif;
     font-size: 36px;
-    color: #33CCFF;
+    color: #FFAA00;
     font-weight: bold;
 }
 
 .font-regist {
+    font-family: 'Mitr', sans-serif;
     font-size: 18px;
-    color: #dbdedf;
+    color: #3E3F68;
 }
 
 .loginGoogle {
@@ -26,9 +29,17 @@ hr {
     margin-right: 5px;
 }
 
-.checkbox {
+.checkboxRegist {
+    font-family: 'Mitr', sans-serif;
     font-size: 18px;
-    color: #33CCFF;
+    color: #FFAA00;
+    font-weight: bold;
+}
+
+.checkbox {
+    font-family: 'Mitr', sans-serif;
+    font-size: 20px;
+    color: #3E3F68;
 }
 
 .pd-15 {
@@ -45,8 +56,11 @@ hr {
 }
 
 .btn-primary {
-    background-color: #33ccff;
-    border-color: #33ccff;
+    font-family: 'Mitr', sans-serif;
+    color: white;
+    font-weight: bold;
+    background-color: #FFAA00;
+    border-color: #FFAA00;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -66,22 +80,6 @@ hr {
     border-color: #33ccff;
 }
 
-.form-control {
-    display: block;
-    width: 80%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
 .wrong {
     color: #fd2e2e;
 }
@@ -89,7 +87,6 @@ hr {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #33ccff;
     box-shadow: 0 0 0 0.2rem rgb(51 204 255);
 }
 
@@ -99,7 +96,23 @@ hr {
 }
 
 .btn-danger-Google {
-    color: #333333;
-    background-color: white;
-    border-color: white;
+    font-family: 'Mitr', sans-serif;
+    color: white;
+    font-weight: bold;
+    background-color: #de5246;
+    border-color: #de5246;
+}
+
+.borderLogin {
+    width: 80%;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px solid #FFAA00;
+    border-radius: 10px;
+}
+
+.picLogo {
+    width: 60%;
+    height: 200px;
 }

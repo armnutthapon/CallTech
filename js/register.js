@@ -17,7 +17,7 @@ $(function() {
                     photoURL: "../images/Profile.png"
 
                 }).then(function() {
-                    window.location.href = "popcorn.html";
+                    window.location.href = "calltech.html";
                 }).catch(function(error) {
                     // An error happened.
                 });

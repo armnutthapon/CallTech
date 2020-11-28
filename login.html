@@ -11,57 +11,58 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/lib/onsenui/onsen-css-components.min.css">
 <link rel="stylesheet" href="/lib/onsenui/onsenui.css">
+<link rel="stylesheet" href="css/login.css">
 
 </head>
 
 <body>
     <ons-page>
 
-        <div class="text-center mt-30">
-            <div class="title">CALL TECH</div>
-        </div>
-        <div id="list">
-        </div>
-        <div class="container">
-
-            <div class="form-group">
-                <input type="text" class="form-control form-control-sm ml-mr-auto" id="email" aria-describedby="helpId" placeholder="E-MAIL">
+        <div class="container text-center ">
+            <div class="mt-30">
+                <div class="title">CALL TECH</div>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control form-control-sm ml-mr-auto" id="password" aria-describedby="helpId" placeholder="PASSWORD">
+            <img src="/image/logo.png" alt="" class="picLogo">
+            <div class="container">
 
-            </div>
-            <div class="col-12 text-center">
-                <h5 class="wrong" id="errormessage"></h5>
-            </div>
-            <div class="form-group text-center pd-15">
-                <input type="checkbox" class="ml-mr-auto" name="remember" required>
-                <span class="checkbox">Remember me.</span>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-sm ml-mr-auto borderLogin" id="email" aria-describedby="helpId" placeholder="E-MAIL">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-sm ml-mr-auto borderLogin" id="password" aria-describedby="helpId" placeholder="PASSWORD">
 
-            <p class="text-center">
-                <button type="submit" class="btn btn-primary" id="signinemail">SIGN IN</button>
-            </p>
+                </div>
+                <div class="col-12 text-center">
+                    <h5 class="wrong" id="errormessage"></h5>
+                </div>
+                <div class="form-group text-center pd-15">
+                    <input type="checkbox" class="ml-mr-auto" name="remember" required>
+                    <span class="checkbox">Remember me</span>
+                </div>
 
-            <p class="text-center">
-                <button type="submit" class="btn btn-danger-Google" id="signinGoogle">
+                <p class="text-center">
+                    <button type="submit" class="btn btn-primary" id="signinemail">SIGN IN</button>
+                </p>
+
+                <p class="text-center">
+                    <button type="submit" class="btn btn-danger-Google" id="signinGoogle">
                         <img width="28px" class="loginGoogle" alt="Google sign-in" src="images/google-symbol.png" />
-                Google+</button>
-            </p>
+                        Google+</button>
+                </p>
 
-            <div class="col-12">
-                <hr class="text-center">
-            </div>
+                <div class="col-12">
+                    <hr class="text-center">
+                </div>
 
-            <div class="col-12">
-                <p class="text-center font-regist">Don't have account ? <a href="register.html" class="checkbox" id="register">REGISTER</a></p>
+                <div class="col-12">
+                    <p class="text-center font-regist">Don't have account ? <a href="register.html" class="checkboxRegist" id="register">REGISTER</a></p>
+                </div>
+
             </div>
+        </div>
+
 
         </div>
-        </div>
-
-
-
 
     </ons-page>
 

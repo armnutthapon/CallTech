@@ -27,7 +27,7 @@ $(function() {
         firebase.auth().onAuthStateChanged(function(user) {
 
             if (user) {
-                window.location.href = "popcorn.html";
+                window.location.href = "calltech.html";
             }
         });
     })
