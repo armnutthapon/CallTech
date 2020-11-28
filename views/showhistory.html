@@ -1,0 +1,37 @@
+<ons-page id="showhistory">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center toolbartitle">ประวัติการใช้บริการ
+        </div>
+    </ons-toolbar>
+
+    <div class="container MT50">
+
+        <div id="showHis">
+
+        </div>
+
+
+        <button type="button" class="btn btnContact" style="width: 100%;height: 50px;margin-top: 50px;"
+        id="successHistory">ยืนยันการได้รับบริการ</button>
+    </div>
+
+
+ 
+
+
+    <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+        <div class="alert-dialog-title font">ยืนยัน</div>
+        <div class="alert-dialog-content font">
+
+ยืนยันการได้รับบริการ
+        </div>
+        <div class="alert-dialog-footer">
+            <ons-alert-dialog-button onclick="hideAlertDialog()">Cancel</ons-alert-dialog-button>
+            <ons-alert-dialog-button onclick="successConfirmed()">OK</ons-alert-dialog-button>
+        </div>
+    </ons-alert-dialog>
+
+</ons-page>

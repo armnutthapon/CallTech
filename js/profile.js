@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
 
-    document.addEventListener('init', function(event) {
+    document.addEventListener('init', function (event) {
         var page = event.target;
         if (page.id === "createdeal") {
             const nameTech = page.data.title;
@@ -10,22 +10,28 @@ $(function() {
             $("#showName").append(result)
         } else if (page.id === "profile") {
 
-            $('#changeLanguage').click(function() {
+            $('#changeLanguage').click(function () {
                 document.querySelector('#Navigator_profile').pushPage('views/profile_language.html');
             })
 
-            $('#privacy').click(function() {
+            $('#privacy').click(function () {
                 document.querySelector('#Navigator_profile').pushPage('views/profile_privacy.html');
             })
 
-            $('#service').click(function() {
+            $('#service').click(function () {
                 document.querySelector('#Navigator_profile').pushPage('views/profile_service.html');
             })
 
 
-            $('#setting').click(function() {
+            $('#setting').click(function () {
                 document.querySelector('#Navigator_profile').pushPage('views/profile_setting.html');
             })
+        } else if (page.id === "successhistory") {
+
+            const idHistory = page.data.title;
+           console.log(idHistory);
+
+           
         }
 
     });
