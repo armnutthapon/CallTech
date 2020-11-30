@@ -216,13 +216,12 @@
     }
     
     .historyIcon {
-        color: #FFAA00;
+        color: #3E3F68;
         font-size: 20px;
     }
     
     .historyStatus {
         text-align: right;
-        color: #FFAA00;
     }
     
     .historyTech {

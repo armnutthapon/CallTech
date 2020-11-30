@@ -9,13 +9,13 @@ $(function () {
              <ons-card class="hisBorder"  id="${doc.data().id}">
             <div class="historyTopic">${doc.data().topic}</div>
             <div class="historyDetail">${doc.data().detail}</div>
-            <div class="historyStatus">
-                <ons-icon icon="fa-wrench" class="historyIcon"></ons-icon>
-                ${doc.data().status}
+            <div class="historyStatus" style="color: ${doc.data().statusColor};">
+            <ons-icon icon="fa-wrench" class="historyIcon"></ons-icon>
+            ${doc.data().status}
             </div>
             <div class="historyTech"> ช่างผู้รับผิดชอบ : <span class="historyTechName">${doc.data().Tname}</span> </div>
-        </ons-card>      
-        </div>
+                </ons-card>      
+            </div>
         `;
             $('#showHistory').append(row);
 
@@ -25,8 +25,6 @@ $(function () {
 
             const aa = $(this).attr('id')
             getHistory(aa)
-            console.log(aa);
-
             document.querySelector('#Navigator_history').pushPage('views/showhistory.html');
 
 
@@ -39,6 +37,7 @@ $(function () {
 
 function getHistory(Target) {
     var idHistory = "";
+    var checkStatus = "";
     db.collection("history").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             if (doc.data().id == Target) {
@@ -47,7 +46,7 @@ function getHistory(Target) {
                 <ons-card class="hisBorder"  id="${doc.data().id}">
                <div class="historyTopic">${doc.data().topic}</div>
                <div class="historyDetail">${doc.data().detail}</div>
-               <div class="historyStatus">
+               <div class="historyStatus" style="color: ${doc.data().statusColor};">
                    <ons-icon icon="fa-wrench" class="historyIcon"></ons-icon>
                    ${doc.data().status}
                </div>
@@ -58,42 +57,52 @@ function getHistory(Target) {
 
                 $("#showHis").append(result)
                 idHistory = doc.id;
-            } else { }
-
-
-            $('#successHistory').click(function () {
-                console.log(idHistory);
-                document.querySelector('#Navigator_history').pushPage('views/success.html', { data: { title: idHistory } });
-            })
+                checkStatus = doc.data().status;
+                console.log(checkStatus);
+            }
         });
 
+        if (checkStatus == "ได้รับการให้บริการแล้ว") {
+            successHistory.setAttribute("hidden");
+        }
+
+        $('#successHistory').click(function () {
+            console.log(idHistory);
+
+            successConfirmed(idHistory);
+        })
     });
 
 }
 
 
-var successCheck = function () {
-    var dialog = document.getElementById('my-alert-dialog');
-    if (dialog) {
-        dialog.show();
-    } else {
-        ons.createElement('alert-dialog.html', { append: true })
-            .then(function (dialog) {
-                dialog.show();
-            });
-    }
-};
+// var successCheck = function () {
+//     var dialog = document.getElementById('my-alert-dialog');
+//     if (dialog) {
+//         dialog.show();
+//     } else {
+//         ons.createElement('alert-dialog.html', { append: true })
+//             .then(function (dialog) {
+//                 dialog.show();
+//             });
+//     }
+// };
+
 
 const successConfirmed = (idHistory) => {
 
-    console.log(idHistory);
     ons.notification.alert('ทำรายการสำเร็จ!');
 
-    db.collection("history").doc('idHistory').update({
-       
-        status: 'aaaaaa'
+    // document.querySelector('#Navigator_history').popPage();
+    document.querySelector('#Navigator_history').popPage();
+
+
+    db.collection("history").doc(idHistory).update({
+        statusColor: "green",
+        status: 'ได้รับการให้บริการแล้ว'
 
     })
+
 };
 
 
@@ -140,10 +149,12 @@ const notify = () => {
     ons.notification.alert('ทำรายการสำเร็จ!');
 
     db.collection("history").add({
+        id: $("#nameTech").val() + document.getElementById('problem').value,
         topic: document.getElementById('problem').value,
         detail: document.getElementById('problemDetail').value,
         Tname: $("#nameTech").val(),
-        status: "กำลังดำเนินงาน"
+        statusColor: "#FFAA00",
+        status: "รอการดำเนินงาน"
 
     })
 };

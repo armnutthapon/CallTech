@@ -151,6 +151,7 @@ function getTechDetail(Target) {
 
                 $("#Tcontact").append(result)
                 nameTech = doc.data().name;
+
             } else {}
 
             $('#goContact').click(function() {
