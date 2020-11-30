@@ -53,6 +53,8 @@ function getHistory(Target) {
                <div class="historyTech"> ช่างผู้รับผิดชอบ : <span class="historyTechName">${doc.data().Tname}</span> </div>
            </ons-card>      
            </div>
+           <button type="button" class="btn btnContact" style="width: 80%;height: 50px;margin-top: 50px; "
+           id="successHistory">ยืนยันการได้รับบริการ</button>
            `;
 
                 $("#showHis").append(result)
