@@ -57,7 +57,25 @@
         font-family: 'Mitr', sans-serif;
     }
     
-    h1 h2 h3 h4 h5 h6 {
+    h1 h2 h3 h4 h5 h6 {}
+    
+    ons-list-header {
+        color: #3E3F68;
+        font-family: 'Mitr', sans-serif;
+    }
+    
+    ons-list-item {
+        color: #3E3F68;
+        font-family: 'Mitr', sans-serif;
+    }
+    
+    .profileFontColor {
+        color: #3E3F68;
+        font-family: 'Mitr', sans-serif;
+    }
+    
+    .profileLogout {
+        color: red;
         font-family: 'Mitr', sans-serif;
     }
     
@@ -180,6 +198,7 @@
     }
     
     .font {
+        color: #3E3F68;
         font-family: 'Mitr', sans-serif;
     }
     
