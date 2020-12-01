@@ -48,11 +48,6 @@ function showHistory() {
 
 }
 
-
-
-
-
-
 function getHistory(Target) {
     var idHistory = "";
     var checkStatus = "";
@@ -175,13 +170,15 @@ const notify = () => {
 
     ons.notification.alert('ทำรายการสำเร็จ!');
 
-    db.collection("history").add({
-        id: $("#nameTech").val() + document.getElementById('problem').value,
-        topic: document.getElementById('problem').value,
-        detail: document.getElementById('problemDetail').value,
-        Tname: $("#nameTech").val(),
-        statusColor: "#FFAA00",
-        status: "รอการดำเนินงาน"
+    db.collection("history").get().then(snap => {
+        db.collection("history").add({
+            id: "HID" + (snap.size + 1),
+            topic: document.getElementById('problem').value,
+            detail: document.getElementById('problemDetail').value,
+            Tname: $("#nameTech").val(),
+            statusColor: "#FFAA00",
+            status: "รอการดำเนินงาน"
 
-    })
+        })
+    });
 };

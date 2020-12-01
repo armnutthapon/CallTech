@@ -130,7 +130,7 @@ function getTechDetail(Target) {
             if (doc.data().id == Target) {
                 const result =
                     `
-                    <img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picCard">
+                    <img src="${doc.data().pic}" alt="Onsen UI"  class="picT">
                 <div>
                 <div class="detailName">
                 ${doc.data().name} </div>

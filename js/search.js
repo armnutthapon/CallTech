@@ -152,7 +152,8 @@ function getTechDetail2(Target) {
         querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
                 const result =
-                    `<img src="${doc.data().pic}" alt="Onsen UI" style="width: 100%" class="picT">
+                    `                    <img src="${doc.data().pic}" alt="Onsen UI"  class="picT">
+
             <div>
                 <div class="detailName">
                 ${doc.data().name} </div>
@@ -185,6 +186,22 @@ function getTechDetail2(Target) {
         });
     });
 
+    db.collection("comment").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var row = `<div>
+                    <div class="row pl-2">
+                         <div class="col-3"><img src="${doc.data().pic}" class="commentPic" alt=""></div>
+                        <div class="col-9">${doc.data().text}</div>
+                    
+                     </div> 
+                    <div class="commentRate">
+                        <ons-icon icon="md-star">
+                        </ons-icon>  ${doc.data().rate}
+                    </div>
+                </div>`;
+            $('#showComment').append(row);
+        });
 
 
+    });
 }
