@@ -1,6 +1,22 @@
 var db = firebase.firestore();
 
-$(function () {
+$(function() {
+    document.addEventListener('init', function(event) {
+        var page = event.target;
+        if (page.id == "historyPage") {
+            showHistory();
+
+        }
+
+    });
+
+
+
+})
+
+function showHistory() {
+
+    $('#showHistory').empty();
 
     db.collection("history").get().then((querySnapshot) => {
 
@@ -21,7 +37,7 @@ $(function () {
 
         });
 
-        $("#hisID ons-card").click(function () {
+        $("#hisID ons-card").click(function() {
 
             const aa = $(this).attr('id')
             getHistory(aa)
@@ -32,14 +48,18 @@ $(function () {
 
     });
 
-})
+}
+
+
+
+
 
 
 function getHistory(Target) {
     var idHistory = "";
     var checkStatus = "";
-    db.collection("history").get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+    db.collection("history").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
             if (doc.data().id == Target) {
                 const result =
                     `  <div id="hisID">
@@ -68,7 +88,7 @@ function getHistory(Target) {
             successHistory.setAttribute("hidden");
         }
 
-        $('#successHistory').click(function () {
+        $('#successHistory').click(function() {
             console.log(idHistory);
 
             successConfirmed(idHistory);
@@ -94,6 +114,7 @@ function getHistory(Target) {
 const successConfirmed = (idHistory) => {
 
     ons.notification.alert('ทำรายการสำเร็จ!');
+    showHistory();
 
     // document.querySelector('#Navigator_history').popPage();
     document.querySelector('#Navigator_history').popPage();
@@ -109,7 +130,7 @@ const successConfirmed = (idHistory) => {
 
 
 
-var notnull = function () {
+var notnull = function() {
     var problem = document.getElementById('problem').value;
     var problemDetail = document.getElementById('problemDetail').value;
     if (problem === '' && problemDetail === '') {
@@ -128,25 +149,31 @@ var notnull = function () {
 
 
 
-var createAlertDialog = function () {
+var createAlertDialog = function() {
     var dialog = document.getElementById('my-alert-dialog');
     if (dialog) {
         dialog.show();
     } else {
         ons.createElement('alert-dialog.html', { append: true })
-            .then(function (dialog) {
+            .then(function(dialog) {
                 dialog.show();
             });
     }
 };
 
-var hideAlertDialog = function () {
+var hideAlertDialog = function() {
     document.getElementById('my-alert-dialog').hide();
 
 };
+
+
 const notify = () => {
+
+    showHistory();
+
     document.querySelector('#Navigator_home').popPage();
     document.querySelector('#Navigator_search').popPage();
+
 
     ons.notification.alert('ทำรายการสำเร็จ!');
 
