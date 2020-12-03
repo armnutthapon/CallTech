@@ -58,7 +58,7 @@ function Src() {
     $('#listTech').empty();
     db.collection("technician").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            const TechName = doc.data().title;
+            const TechName = doc.data().name;
             if (TechName.indexOf(result) != -1) {
                 var row = ` <ons-carousel-item>
                 <ons-card id="${doc.data().id}">

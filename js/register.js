@@ -14,7 +14,7 @@ $(function() {
                 var user = firebase.auth().currentUser
                 user.updateProfile({
                     displayName: name,
-                    photoURL: "../images/Profile.png"
+                    photoURL: "../image/Profile.png"
 
                 }).then(function() {
                     window.location.href = "calltech.html";

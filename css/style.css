@@ -71,6 +71,8 @@
     
     .profilePic {
         border: 3px solid #FFAA00;
+        width: 64px;
+        height: 64px;
     }
     
     .profileFontColor {

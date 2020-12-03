@@ -3,10 +3,16 @@ var db = firebase.firestore();
 $(function() {
     document.addEventListener('init', function(event) {
         var page = event.target;
-        // if (page.id === 'contact') {
-        //     document.querySelector('#Navigator_contact').pushPage('createdeal.html');
+        if (page.id === 'profile') {
+            $('#signout').click(function() {
+                firebase.auth().signOut().then(function() {
+                    // Sign-out successful.
+                }).catch(function(error) {
+                    // An error happened.
+                });
+            })
 
-        // }
+        }
     });
 
 
@@ -15,7 +21,7 @@ $(function() {
         if (user) {
             var email = user.email;
             var displayName = user.displayName;
-            var img = `<img class="list-material__thumbnail" src="${user.photoURL}">`
+            var img = `<img class="list-material__thumbnail profilePic" src="${user.photoURL}">`
             $("#userProfile").append(img)
             $("#userName").html(displayName)
 
