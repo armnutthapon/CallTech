@@ -24,7 +24,6 @@ $(function() {
             var img = `<img class="list-material__thumbnail profilePic" src="${user.photoURL}">`
             $("#userProfile").append(img)
             $("#userName").html(displayName)
-
         } else {
             window.location.href = "login.html";
         }
