@@ -1,6 +1,7 @@
 .welcome {
-    font-size: 300px;
-    color: white;
+    font-family: 'Mitr', sans-serif;
+    color: #FFAA00;
+    font-weight: bold;
 }
 
 .logowelcome {
@@ -8,25 +9,20 @@
     height: auto;
 }
 
-.popcorn {
-    color: #33ccff;
-    font-weight: bold;
-}
-
 .startbtn {
+    font-family: 'Mitr', sans-serif;
     margin-top: 15px;
-    background-color: #33CCFF;
-    border-radius: 30px;
-    width: 50%;
-    font-size: 20px;
+    background-color: #FFAA00;
+    border-radius: 15px;
+    width: 60%;
+    font-size: 15px;
     font-weight: bold;
+    border: 3px solid #FFAA00;
 }
 
-
-/* .getstart {
-    font-size: 22px;
-    font-weight: bold;
-} */
+.getstart {
+    color: white;
+}
 
 .margintop {
     margin-top: 170px;
@@ -36,8 +32,9 @@
     margin-top: 50px;
 }
 
-.allmovie {
-    color: grey;
+.slogans {
+    font-family: 'Mitr', sans-serif;
+    color: #333333;
     font-size: 18px;
 }
 
@@ -49,7 +46,7 @@
         width: 30%;
         height: auto;
     }
-    .allmovie {
+    .slogans {
         font-size: 30px;
     }
     .startbtn {
@@ -68,7 +65,7 @@
         width: 30%;
         height: auto;
     }
-    .allmovie {
+    .slogans {
         font-size: 25px;
     }
     .startbtn {
@@ -87,14 +84,14 @@
         width: 40%;
         height: auto;
     }
-    .allmovie {
+    .slogans {
         font-size: 14px;
     }
     .startbtn {
         font-size: 18px;
     }
     .welcome {
-        font-size: 18px;
+        font-size: 30px;
     }
 }
 
@@ -106,14 +103,14 @@
         width: 40%;
         height: auto;
     }
-    .allmovie {
+    .slogans {
         font-size: 14px;
     }
     .startbtn {
         font-size: 18px;
     }
     .welcome {
-        font-size: 18px;
+        font-size: 30px;
     }
 }
 
@@ -125,13 +122,13 @@
         width: 40%;
         height: auto;
     }
-    .allmovie {
+    .slogans {
         font-size: 14px;
     }
     .startbtn {
         font-size: 18px;
     }
     .welcome {
-        font-size: 18px;
+        font-size: 30px;
     }
 }

@@ -71,8 +71,22 @@
     
     .profilePic {
         border: 3px solid #FFAA00;
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
+    }
+    
+    .btn-warning {
+        color: white;
+    }
+    
+    .button {
+        background: #FFAA00;
+    }
+    
+    .btn-primary {
+        color: white;
+        background-color: #FFAA00;
+        border-color: #FFAA00;
     }
     
     .profileFontColor {
